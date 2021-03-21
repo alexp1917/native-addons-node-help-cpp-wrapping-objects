@@ -1,0 +1,83 @@
+yarn run v1.22.5
+$ node-gyp clean
+gyp info it worked if it ends with ok
+gyp info using node-gyp@7.1.2
+gyp info using node@14.15.4 | linux | x64
+gyp info ok 
+Done in 0.17s.
+yarn run v1.22.5
+$ node-gyp configure
+gyp info it worked if it ends with ok
+gyp info using node-gyp@7.1.2
+gyp info using node@14.15.4 | linux | x64
+gyp info find Python using Python version 3.8.5 found at "/usr/bin/python3"
+gyp info spawn /usr/bin/python3
+gyp info spawn args [
+gyp info spawn args   '/home/$USER/native-ext/basic-example/node_modules/node-gyp/gyp/gyp_main.py',
+gyp info spawn args   'binding.gyp',
+gyp info spawn args   '-f',
+gyp info spawn args   'make',
+gyp info spawn args   '-I',
+gyp info spawn args   '/home/$USER/native-ext/basic-example/build/config.gypi',
+gyp info spawn args   '-I',
+gyp info spawn args   '/home/$USER/native-ext/basic-example/node_modules/node-gyp/addon.gypi',
+gyp info spawn args   '-I',
+gyp info spawn args   '/home/$USER/.cache/node-gyp/14.15.4/include/node/common.gypi',
+gyp info spawn args   '-Dlibrary=shared_library',
+gyp info spawn args   '-Dvisibility=default',
+gyp info spawn args   '-Dnode_root_dir=/home/$USER/.cache/node-gyp/14.15.4',
+gyp info spawn args   '-Dnode_gyp_dir=/home/$USER/native-ext/basic-example/node_modules/node-gyp',
+gyp info spawn args   '-Dnode_lib_file=/home/$USER/.cache/node-gyp/14.15.4/<(target_arch)/node.lib',
+gyp info spawn args   '-Dmodule_root_dir=/home/$USER/native-ext/basic-example',
+gyp info spawn args   '-Dnode_engine=v8',
+gyp info spawn args   '--depth=.',
+gyp info spawn args   '--no-parallel',
+gyp info spawn args   '--generator-output',
+gyp info spawn args   'build',
+gyp info spawn args   '-Goutput_dir=.'
+gyp info spawn args ]
+gyp info ok 
+Done in 0.50s.
+yarn run v1.22.5
+$ node-gyp build
+gyp info it worked if it ends with ok
+gyp info using node-gyp@7.1.2
+gyp info using node@14.15.4 | linux | x64
+gyp info spawn make
+gyp info spawn args [ 'BUILDTYPE=Release', '-C', 'build' ]
+make: Entering directory '/home/$USER/native-ext/basic-example/build'
+  CXX(target) Release/obj.target/addon/src/*.o
+  SOLINK_MODULE(target) Release/obj.target/addon.node
+  COPY Release/addon.node
+make: Leaving directory '/home/$USER/native-ext/basic-example/build'
+gyp info ok 
+Done in 0.90s.
+yarn run v1.22.5
+$ mocha
+
+
+  ok
+    1) should require
+
+
+  0 passing (9ms)
+  1 failing
+
+  1) ok
+       should require:
+     Error: Module did not self-register: '/home/$USER/native-ext/basic-example/build/Release/addon.node'.
+      at Object.Module._extensions..node (internal/modules/cjs/loader.js:1122:18)
+      at Module.load (internal/modules/cjs/loader.js:928:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+      at Module.require (internal/modules/cjs/loader.js:952:19)
+      at require (internal/modules/cjs/helpers.js:88:18)
+      at Context.<anonymous> (test/example.js:3:19)
+      at processImmediate (internal/timers.js:461:21)
+
+
+
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+[Finished in 2.6s with exit code 1]
+[cmd: ['/bin/bash', '/home/$USER/native-ext/basic-example/script.sh']]
+[dir: /home/$USER/native-ext/basic-example]

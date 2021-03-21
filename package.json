@@ -1,0 +1,16 @@
+{
+  "name": "basic-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "node-gyp build",
+    "test": "mocha",
+    "node-gyp": "node-gyp"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2",
+    "node-gyp": "^7.1.2"
+  }
+}
